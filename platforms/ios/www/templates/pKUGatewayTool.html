@@ -1,0 +1,30 @@
+
+
+<ion-view title="PKU Gateway Tool">
+    <ion-content overflow-scroll="true" padding="true" scroll="false" class="has-header">
+
+
+        <form class="list" method="post" name="account" ng-submit="processForm()">
+            <ion-list>
+                <label class="item item-input" name="username">
+                    <span class="input-label">Username</span>
+                    <input type="text" placeholder="" ng-model="formData.username1">
+                </label>
+                <label class="item item-input" name="password">
+                    <span class="input-label">Password</span>
+                    <input type="password" placeholder="" ng-model="formData.password">
+                </label>
+            </ion-list>
+            <div class="spacer" style="height: 40px;"></div>
+            <button class="button button-stable button-block " onclick="login();">Login</button>
+            <button type="submit" class="button button-stable button-block ">Connect Free Gateway</button>
+            <button class="button button-stable button-block " onclick="connectCharged();">Connect Charged Gateway</button>
+        </form>
+
+        <div id="messages" ng-show="message">{{ message }}</div>
+        <div id="errors" ng-show="message">{{ errorname }}</div>
+        <pre>
+            {{formData}}
+        </pre>
+    </ion-content>
+</ion-view>

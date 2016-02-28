@@ -1,0 +1,39 @@
+
+
+<ion-view title="PKU Gateway Tool">
+    <ion-content overflow-scroll="true" padding="true" scroll="true" class="has-header ionic-scroll scroll-content">
+
+
+        <form class="list" method="post" name="account" >
+
+            <ion-list>
+                <label class="item item-input" name="username">
+                    <span class="input-label">Username</span>
+                    <input type="text" placeholder="" ng-model="formData.username1" value="1300012959">
+                </label>
+                <label class="item item-input" name="password">
+                    <span class="input-label">Password</span>
+                    <input type="password" placeholder="" ng-model="formData.password">
+                </label>
+            </ion-list>
+        
+            <div class="spacer" style="height: 40px;"></div>
+            <button class="button button-stable button-block " ng-click="processForm('connect', 2);">Connect Free Gateway</button>
+            <button class="button button-stable button-block " ng-click="processForm('connect', 1);">Connect Global Gateway</button>
+            <button class="button button-stable button-block " ng-click="processForm('disconnect', 1);">Disconnect Gateway</button>
+            <button class="button button-stable button-block " ng-click="processForm('disconnectall', 1);">Disconnect All</button>
+        </form>
+
+        <div class="card" ng-show="info">
+            <div class="item item-text-wrap">{{response}}</div>
+            <div class="item item-text-wrap" ng-show="connect">{{ username }}</div>
+            <div class="item item-text-wrap" ng-show="connect">{{ constatus }}</div>
+            <div class="item item-text-wrap" ng-show="connect">{{ count }}</div>
+            <div class="item item-text-wrap" ng-show="connect">{{ ipaddress }}</div>
+            <div class="item item-text-wrap" ng-show="connect">{{ timecount }}</div>
+            <div class="item item-text-wrap" ng-show="connect">{{ balance }}</div>
+
+            <div class="item item-text-wrap" ng-show="message">{{message}}</div>
+        </div>
+    </ion-content>
+</ion-view>
